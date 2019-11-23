@@ -937,6 +937,13 @@ apollo-server-plugin-base@^0.6.8:
   dependencies:
     apollo-server-types "^0.2.8"
 
+apollo-server-testing@2.9.12:
+  version "2.9.12"
+  resolved "https://registry.yarnpkg.com/apollo-server-testing/-/apollo-server-testing-2.9.12.tgz#2dcad49f399f50bf3d8bbaa0c753eb7eca48ff10"
+  integrity sha512-TFHXA8HdD++FzbCvrQryFqALvX2Mrea1bNu7pi5L5wpjB5Ug3FudasYGhy6tl8BaStPxsugWngchuD3IPSBrgg==
+  dependencies:
+    apollo-server-core "^2.9.12"
+
 apollo-server-types@^0.2.8:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-0.2.8.tgz#729208a8dd72831af3aa4f1eb584022ada146e6b"
