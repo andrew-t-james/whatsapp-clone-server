@@ -22,6 +22,7 @@ export const messages = [
     )
   }
 ]
+
 export const chats = [
   {
     id: '1',
