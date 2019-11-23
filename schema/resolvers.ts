@@ -13,6 +13,11 @@ interface Chat {
   name: string
   picture: string
   lastMessage: string
+  messages: [string]
+}
+
+interface Chats {
+  [id: number]: Chat
 }
 
 const resolvers = {
@@ -20,12 +25,19 @@ const resolvers = {
   URL: URLResolver,
   Chat: {
     lastMessage(chat: Chat): Message | undefined {
-      return messages.find(m => m.id === chat.lastMessage)
+      const lastMessage = chat.messages[chat.messages.length - 1]
+      return messages.find(m => m.id === lastMessage)
+    },
+    messages(chat: Chat): Message[] {
+      return messages.filter(m => chat.messages.includes(m.id))
     }
   },
   Query: {
-    chats(): Chat[] {
+    chats(): Chats[] {
       return chats
+    },
+    chat(root: object, { chatId }: { chatId: string }): Chats | undefined {
+      return chats.find(c => c.id === chatId)
     }
   }
 }
