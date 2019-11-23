@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev": "nodemon --exec ts-node index.ts",
     "start": "ts-node index.ts"
   },
   "devDependencies": {
@@ -18,6 +19,7 @@
     "eslint-loader": "3.0.2",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.16.0",
+    "nodemon": "2.0.1",
     "prettier": "1.19.1",
     "ts-node": "8.5.2",
     "typescript": "3.7.2"
