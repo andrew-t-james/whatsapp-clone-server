@@ -4,7 +4,8 @@ import schema from '../../schema'
 import { resetDb } from '../../db'
 describe('Mutation.addMessage', () => {
   beforeEach(resetDb)
-  it('should add message to specified chat', async () => {
+
+  test('should add message to specified chat', async () => {
     const server = new ApolloServer({ schema })
     const { query, mutate } = createTestClient(server)
     const addMessageRes = await mutate({
@@ -18,9 +19,11 @@ describe('Mutation.addMessage', () => {
         }
       `
     })
+
     expect(addMessageRes.data).toBeDefined()
     expect(addMessageRes.errors).toBeUndefined()
     expect(addMessageRes.data).toMatchSnapshot()
+
     const getChatRes = await query({
       variables: { chatId: '1' },
       query: gql`
